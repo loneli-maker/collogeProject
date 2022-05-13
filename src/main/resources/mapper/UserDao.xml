@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.UserDao">
+<!--    <resultMap id="project" type="com.itheima.domain.User">-->
+<!--        <id column="project" property="projectId"></id>-->
+<!--        <result column="project_name" property="projectName"></result>-->
+<!--        <result column="project_info" property="projectInfo"></result>-->
+<!--        <result column="teacher_id" property="teacherId"></result>-->
+<!--    </resultMap>-->
+
+    <select id="selectByUsername" resultType="com.itheima.domain.User">
+        SELECT
+            *
+        FROM
+            user
+        WHERE
+            username = #{username}
+    </select>
+
+
+
+</mapper>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+<body>
+<div class="page">
+  <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+  <div class="page-content d-flex align-items-stretch">
+    <div th:include="common/common_navigation :: commonNavigation"></div>
+
+    <div class="content-inner">
+      <!-- Page Header-->
+      <header class="page-header">
+        <div class="container-fluid">
+          <h2 class="no-margin-bottom">项目列表页</h2>
+        </div>
+      </header>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder container-fluid">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/index}">首页</a></li>
+          <li class="breadcrumb-item active">项目列表页</li>
+        </ul>
+      </div>
+      <section class="tables">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header d-flex align-items-center">
+                  <div class="card-body">
+                    <form class="form-inline">
+                      <div class="form-group">
+                        用户ID：
+                        <input id="articleId" type="text" placeholder="" class="mr-1 form-control">
+                      </div>
+                      <div class="form-group">
+                        用户名称：
+                        <input id="articleName" type="text" placeholder="Username" class="mr-3 form-control">
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary">查询</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <h3 style="color: #1e7e34;margin:15px 10px 0px 50px;" th:if="${#strings.isEmpty(msg)}">恭喜您，没有需要打分的项目，可以去休息！</h3>
+                <h3 style="color: #2b90d9;margin:15px 10px 0px 50px;" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></h3>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                      <tr>
+                        <th>学生学号</th>
+                        <th>学生姓名</th>
+                        <th>项目ID</th>
+                        <th>项目名称</th>
+                        <th>申报内容</th>
+<!--                        <th>指导内容</th>-->
+<!--                        <th>申报进度</th>-->
+<!--                        <th>通过状态</th>-->
+<!--                        <th>目前总分</th>-->
+<!--                        <th>评审员数</th>-->
+                        <th>操作</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr th:each="apply : ${apply}">
+                        <td th:text="${apply.studentId}">Mark</td>
+                        <td th:text="${apply.studentName}">Otto</td>
+                        <td th:text="${apply.projectId}">@mdo</td>
+                        <td th:text="${apply.projectName}">@mdo</td>
+                        <td th:text="${apply.projectContent}">Otto</td>
+<!--                        <td th:text="${apply.projectTeach}">Otto</td>-->
+<!--                        <td th:text="${apply.projectProgress}">Otto</td>-->
+<!--                        <td th:text="${apply.passStatus}">Otto</td>-->
+<!--                        <td th:text="${apply.projectTotalScore}">Otto</td>-->
+<!--                        <td th:text="${apply.adjuNumber}">Otto</td>-->
+                        <th>
+                          <!--  th:href="@{/edit(id=${user.id})}"  th:href="@{/del/{id}(id=${user.id})}"-->
+                          <!--                              <a href="#" class="dropdown-item edit"> <i class="fa fa-eye"></i>预览</a>-->
+                          <!--                              <a href="#" class="dropdown-item edit"> <i class="fa fa-check"></i>启用</a>-->
+                          <a href="#" class="dropdown-item edit"> <i class="fa fa-remove"></i>禁用</a>
+
+                          <a th:href="@{/guideedit2(teacherId=${apply.teacherId},studentId=${apply.studentId})}" class="dropdown-item edit"> <i class="fa fa-gear"></i>指导</a><!-- @{/guideedit2}-->
+<!--                          <button type="button" id="btn-add3"  class="dropdown-item edit" data-toggle="modal" data-target="#myModal"> <i class="fa fa-gear"></i>指导</button>-->
+<!--                          th:href="@{/teaselectprojectdetail(teacherId=${apply.teacherId})}"-->
+                          <a  class="dropdown-item edit"> <i class="fa fa-trash"></i>删除</a>
+<!--                          <a  class="dropdown-item edit"> <i class="btn btn-default add" data-toggle="modal" data-target="#addModal"></i>增加</a>-->
+                        </th>
+                      </tr>
+                      </tbody>
+                    </table>
+<!--                    <h1><button id="btn-add3">新增</button></h1>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <div th:include="common/common_footer :: commonFooter"></div>
+    </div>
+  </div>
+</div>
+
+<!--     弹窗输入内容-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">申报</h4>
+      </div>
+      <div class="modal-body">
+<!--        <h2>你即将指导的项目号为：<i th:text="${apply.projectId}>45</i>的项目</h2>-->
+<!--        <h2>名称为 <i th:text="${apply.studentName}>孙悟空</i></h2>-->
+        <div class="form-group">
+          <label for="txt_departmentname">请添加指导</label>
+          <input style="width:446.5px;height:300px" type="text" name="txt_departmentname" class="form-control" id="txt_departmentname" placeholder="指导内容">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
+        <button type="button" id="btn_submit" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--      弹窗输入内容-->
+
+
+
+<div th:include="common/common_onload_js :: onLoadJs"></div>
+<script type="text/javascript">
+$("#btn-add2").click(function () {
+  // //加载模态框
+  // $('#myModal').modal();
+  // $(document).ready(function () {
+  //   $("#select").bind("change",function(){
+  //     if($(this).val()==0){
+  //       return;
+  //     }
+  //     else{
+  //       $("p").text($(this).val());
+  //     }
+  //   });
+  // });
+  // //选择触发事件
+  // function goUrl(obj){
+  //   location.href=obj.value;
+  // }
+  });
+
+</script>
+</body>
+</html>

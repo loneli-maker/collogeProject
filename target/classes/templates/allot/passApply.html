@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader">
+
+</head>
+<style type="text/css">
+  .table {
+    margin-bottom: 15px;
+    width: 100%;
+    border-collapse: collapse;}
+  .table_header td {
+    background: url(../../static/image/tableheader-bg.gif) no-repeat left top;
+    padding: 5px 10px;
+    color: rgb(70, 122, 167);
+    border-top: 1px solid #CBD6DE;
+    border-bottom: 1px solid #ADBECB;
+    font-size: 1.1em;
+    font-weight: bold;}
+  .row1{background: #380a431a;}
+  .row2{background: #2f6b3c36;}
+</style>
+<body>
+<div class="page">
+  <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+  <div class="page-content d-flex align-items-stretch">
+    <div th:include="common/common_navigation :: commonNavigation"></div>
+
+    <div class="content-inner">
+      <!-- Page Header-->
+      <header class="page-header">
+        <div class="container-fluid">
+          <h2 class="no-margin-bottom">用户列表页</h2>
+        </div>
+      </header>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder container-fluid">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/index}">首页</a></li>
+          <li class="breadcrumb-item active">用户列表页</li>
+        </ul>
+      </div>
+      <section class="tables">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header d-flex align-items-center">
+                  <div class="card-body">
+                    <!--                    <form class="form-inline">-->
+                    <!--                      <div class="form-group">-->
+                    <!--                        用户ID：-->
+                    <!--                        <input id="articleId" type="text" placeholder="" class="mr-1 form-control">-->
+                    <!--                      </div>-->
+                    <!--                      <div class="form-group">-->
+                    <!--                        用户名称：-->
+                    <!--                        <input id="articleName" type="text" placeholder="Username" class="mr-3 form-control">-->
+                    <!--                      </div>-->
+                    <!--                      <div class="form-group">-->
+                    <!--                        <button type="submit" class="btn btn-primary">查询</button>-->
+                    <!--                      </div>-->
+                    <!--                    </form>-->
+                    <!--判断-->
+                    <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                    <form class="form-inline"  th:action="@{/AddAdjuServlet2}" method="get">
+                      <div class="form-group">
+                        为学生：
+                        <select class="form-control" name="studentId">
+                          <!--<input type="hidden" name="typeId">-->
+                          <option value="">请选择学生</option>
+                          <option th:each="apply : ${apply}" class="item" value="1" th:value="${apply.studentId}" th:text="${apply.studentName}">1</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        申请的项目：
+                        <select class="form-control" name="projectId" >
+                          <option value="">请选择项目</option>
+                          <!--<input type="hidden" name="typeId">-->
+                          <option th:each="apply : ${apply}" class="item" value="1" th:value="${apply.projectId}" th:text="${apply.projectName}">1</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        分配评审员：
+                        <select class="form-control" name="adjuId">
+                          <option value="">请选择评审员</option>
+                          <!--<input type="hidden" name="typeId">-->
+                          <option th:each="adju : ${adju}" class="item" value="1" th:value="${adju.adjudicatorId}" th:text="${adju.adjudicatorName}">1</option>
+                        </select>
+                      </div>
+                      <div class="form-group" style="margin-left:1em">
+                        <button type="submit" class="btn btn-primary">确认分配</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+
+
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                      <tr class="table_header">
+                        <th>学生学号</th>
+                        <th>学生姓名</th>
+                        <th>教师ID</th>
+                        <th>教师名称</th>
+                        <th>项目ID</th>
+                        <th>项目名称</th>
+                        <th>申报内容</th>
+                        <th>指导内容</th>
+                        <th>申报进度</th>
+                        <th>通过状态</th>
+                        <th>目前总分</th>
+                        <th>评审员数</th>
+                        <th>操作</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr th:each="apply,state:${apply}" th:class="${state.odd?'row1':'row2'}">
+                        <td th:text="${apply.studentId}">Mark</td>
+                        <td th:text="${apply.studentName}">Otto</td>
+                        <td th:text="${apply.teacherId}">Otto</td>
+                        <td th:text="${apply.teacherName}">Otto</td>
+
+                        <td th:text="${apply.projectId}">@mdo</td>
+                        <td th:text="${apply.projectName}">@mdo</td>
+                        <td style="width: 120px;height: 100px;" th:text="${apply.projectContent}">Otto</td>
+                        <td style="width: 120px;height: 100px;" th:text="${apply.projectTeach}">Otto</td>
+                        <td style="width: 100px;" th:text="${apply.projectProgress}">Otto</td>
+                        <td th:text="${apply.passStatus}">Otto</td>
+                        <td th:text="${apply.projectTotalScore}">Otto</td>
+<!--                        <td th:text="${apply.adjuNumber}">Otto</td>-->
+                        <td th:text="${apply.hasScoredAdjuNumber}">Otto</td>
+                        <td>
+                          <!--  th:href="@{/edit(id=${user.id})}"  th:href="@{/del/{id}(id=${user.id})}"-->
+                          <!--                              <a href="#" class="dropdown-item edit"> <i class="fa fa-eye"></i>预览</a>-->
+                          <!--                              <a href="#" class="dropdown-item edit"> <i class="fa fa-check"></i>启用</a>-->
+                          <a href="#" class="dropdown-item edit"> <i class="fa fa-remove"></i>禁用</a>
+                          <a  class="dropdown-item edit"> <i class="fa fa-trash"></i>删除</a>
+                          <a  class="dropdown-item edit"> <i class="fa fa-trash"></i>分配评审员</a>
+                          <!--                          <a  class="dropdown-item edit"> <i class="btn btn-default add" data-toggle="modal" data-target="#addModal"></i>增加</a>-->
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <div th:include="common/common_footer :: commonFooter"></div>
+
+    </div>
+  </div>
+</div>
+<div th:include="common/common_onload_js :: onLoadJs"></div>
+<script type="text/javascript">
+  // $(document).ready(function() {
+  //   $.ajax({
+  //     url: "/applylist",
+  //     type: "GET",
+  //     // dataType: "json",
+  //     success: function() {
+  //
+  //     }
+  //   });
+  // });
+
+</script>
+</body>
+</html>

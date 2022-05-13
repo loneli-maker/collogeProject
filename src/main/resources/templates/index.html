@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+<body>
+    <div class="page">
+      <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+      <div class="page-content d-flex align-items-stretch">
+        <div th:include="common/common_navigation :: commonNavigation"></div>
+
+        <div class="content-inner">
+          <!-- Page Header-->
+          <header class="page-header">
+            <div class="container-fluid">
+              <h2 class="no-margin-bottom">系统首页</h2>
+            </div>
+          </header>
+        <div style="margin-bottom: -10px;">
+            <img  th:src="@{/image/bg1.png}" style="width: 1200px;height: 550px">
+        </div>
+          <div th:include="common/common_footer :: commonFooter"></div>
+
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="js/charts-home.js"></script>
+    <!-- Main File-->
+    <script src="js/front.js"></script>
+</body>
+</html>

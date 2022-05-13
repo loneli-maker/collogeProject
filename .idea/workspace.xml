@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1b42e35f-8b48-4ffb-beee-24c8fdcdbf33" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Mapper" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../Program Files (x86)/Tencent/environment/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\Program Files (x86)\Tencent\environment\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="delegateBuildToMaven" value="true" />
+  </component>
+  <component name="ProjectId" id="26olPEnlBV9zHXgwAzTnymsvzcD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/image" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\yqwld\ideaProject\innovation\src\main\resources\static\image" />
+      <recent name="D:\Users\yqwld\ideaProject\innovation\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.InnovationApplication">
+    <configuration name="InnovationApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima.InnovationApplication" />
+      <module name="springboot_08_ssmp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima.ServiceTest" />
+      <module name="springboot_08_ssmp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Booktest.getAlltestte" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_08_ssmp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.Booktest" />
+      <option name="METHOD_NAME" value="getAlltestte" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Booktest.selectProjects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_08_ssmp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.Booktest" />
+      <option name="METHOD_NAME" value="selectProjects" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest.selectAllApplyProjects4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_08_ssmp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.ServiceTest" />
+      <option name="METHOD_NAME" value="selectAllApplyProjects4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InnovationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot_08_ssmp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.itheima.InnovationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.InnovationApplication" />
+        <item itemvalue="JUnit.Booktest.getAlltestte" />
+        <item itemvalue="Application.ServiceTest" />
+        <item itemvalue="JUnit.ServiceTest.selectAllApplyProjects4" />
+        <item itemvalue="JUnit.Booktest.selectProjects" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b42e35f-8b48-4ffb-beee-24c8fdcdbf33" name="Default Changelist" comment="" />
+      <created>1648097794678</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648097794678</updated>
+      <workItem from="1648097796410" duration="7911000" />
+      <workItem from="1648539692951" duration="3898000" />
+      <workItem from="1648607848763" duration="1902000" />
+      <workItem from="1648782604992" duration="189000" />
+      <workItem from="1648785183256" duration="107000" />
+      <workItem from="1648811925929" duration="952000" />
+      <workItem from="1649234402198" duration="59000" />
+      <workItem from="1649468544543" duration="2860000" />
+      <workItem from="1649855984582" duration="54000" />
+      <workItem from="1650379921179" duration="653000" />
+      <workItem from="1650426084578" duration="14290000" />
+      <workItem from="1650456869841" duration="772000" />
+      <workItem from="1650457676274" duration="176000" />
+      <workItem from="1650457874972" duration="1022000" />
+      <workItem from="1650458979428" duration="673000" />
+      <workItem from="1650459867533" duration="4252000" />
+      <workItem from="1650857628450" duration="5680000" />
+      <workItem from="1650893338872" duration="2568000" />
+      <workItem from="1650953557128" duration="22611000" />
+      <workItem from="1650987617836" duration="4992000" />
+      <workItem from="1651038882838" duration="588000" />
+      <workItem from="1651142558104" duration="1431000" />
+      <workItem from="1651149770618" duration="5914000" />
+      <workItem from="1651467955186" duration="15430000" />
+      <workItem from="1651791791927" duration="4205000" />
+      <workItem from="1651796093950" duration="7124000" />
+      <workItem from="1651815400127" duration="23075000" />
+      <workItem from="1651850553706" duration="509000" />
+      <workItem from="1651898093041" duration="5460000" />
+      <workItem from="1651907709545" duration="2162000" />
+      <workItem from="1651927071598" duration="4597000" />
+      <workItem from="1651938515401" duration="3045000" />
+      <workItem from="1651967203962" duration="2965000" />
+      <workItem from="1652449551970" duration="2031000" />
+      <workItem from="1652452051672" duration="437000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="管理员操作用户管理模块，模态弹框的增删改查和分页。" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员操作用户管理模块，模态弹框的增删改查和分页。" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<div th:fragment="page"><!--定义用于被显示列表页包含-->
+  <head>
+    <style>
+      .page-item {
+        padding: 1px 5px;
+        border: 1px solid #afafaf;
+        margin-left: 3px
+      }
+
+      .page-item.active {
+        color: red;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <div style="float: left" th:if="${page.pages>0}">
+    当前第<span th:text="${page.current}" style="font-size: 20px;font-weight: bold;"></span>页,共<span
+          th:text="${page.pages}" style="font-size: 20px;font-weight: bold;"></span>页,总记录数<span th:text="${page.total}" style="font-size: 20px;font-weight: bold;"></span>
+  </div>
+  <div style="float: right" th:if="${page.pages>0}">
+
+    <a th:href="@{${jumpUrl}}" th:text="首页"  th:class="page-item"></a><!--    //th:if="${page.current>1}" th:if="${page.current<page.pages}"-->
+    <a th:href="@{${jumpUrl}+${page.current-1}}" th:text="上一页" th:class="page-item"
+       th:if="${page.current>1}"></a>
+    <a th:href="@{${jumpUrl}+ ${i}}"
+       th:each="i :${#numbers.sequence(1, page.pages)}" th:text="${i}"
+       th:class="${page.current == i}? 'page-item active' :'page-item' "></a>
+    <a th:href="@{${jumpUrl}+${page.current+1}}" th:text="下一页" th:class="page-item"
+       th:if="${page.current<page.pages}"></a> <a
+          th:href="@{${jumpUrl}+${page.pages}}" th:text="尾页" th:class="page-item"
+          ></a>
+  </div>
+</div>
+</html>

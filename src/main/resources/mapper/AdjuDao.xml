@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AdjuDao">
+    <resultMap id="JudgePlus" type="com.itheima.domain.Judge">
+        <id column="student_id" property="studentId"></id>
+        <result column="project_id" property="projectId"></result>
+        <result column="student_name" property="apply.studentName"></result>
+        <result column="project_name" property="apply.projectName"></result>
+<!--        <result column="project_info" property="project.projectInfo"></result>-->
+        <result column="project_content" property="apply.projectContent"></result>
+    </resultMap>
+    <!--    SELECT p.*,t.teacher_name from project p left join teacher t on p.teacher_id=t.teacher_id;-->
+    <select id="queryAllNeedGradeAdju" resultMap="JudgePlus">
+        SELECT
+            j.student_id,j.project_id,a.student_id,a.student_name,a.project_name,a.project_content
+        from judge j left join apply a on j.student_id=a.student_id  where j.adju_id=#{adjud} and j.is_judged='未评分';
+--         select j.student_id,j.project_id,a.student_id,a.student_name,a.project_name,a.project_content
+--         from judge j left join apply a on j.student_id=a.student_id  where j.adju_id=115 and j.is_judged='未评分';
+</select>
+    <update id="addScore1" >
+
+        UPDATE judge SET project_score=#{project_score} , is_judged='已评分' where student_id=#{student_id} and project_id=#{project_id}
+                                    and adju_id= #{adju_id};
+    </update>
+
+    <update id="addScore2" >
+    update apply set has_scored_adju_number=(has_scored_adju_number+1) , project_total_score=(project_total_score+#{new_total_score}) where student_id=#{studentd};
+    </update>
+
+    <select id="selectOne" resultType="com.itheima.domain.Adjudicator">
+        SELECT
+            *
+        FROM
+            adjudicator
+        WHERE
+            adjudicator_name=#{adjudicatorName} and adjudicator_password=#{adjudicatorPassword}
+    </select>
+
+
+</mapper>

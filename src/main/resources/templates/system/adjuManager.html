@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+<body>
+<div class="page">
+  <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+  <div class="page-content d-flex align-items-stretch">
+    <div th:include="common/common_navigation :: commonNavigation"></div>
+
+    <div class="content-inner">
+      <!-- Page Header-->
+      <header class="page-header">
+        <div class="container-fluid">
+          <h2 class="no-margin-bottom">评审员列表页</h2>
+        </div>
+      </header>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder container-fluid">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/index}">首页</a></li>
+          <li class="breadcrumb-item active">评审员列表页</li>
+        </ul>
+      </div>
+      <section class="tables">
+        <div class="container-fluid"  style="margin-top: -35px;">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <!--                后加的-->
+                <!-- 创建市场活动的模态窗口 -->
+                <div class="modal fade" id="createActivityModal" role="dialog">
+                  <div class="modal-dialog" role="document" style="width: 85%;">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel1">新增评审员</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal" th:action="@{/saveAdju}">
+                          <div class="form-group">
+                            <label for="create-startTime" class="col-sm-4 control-label">评审员姓名</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                              <input type="text" name="adjudicatorName" class="form-control time" id="create-startDate">
+                            </div>
+                            <label for="create-endTime" class="col-sm-4 control-label">评审员密码</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                              <input type="text" name="adjudicatorPassword" class="form-control time" id="create-endDate">
+                            </div>
+                          </div>
+                          <button type="submit"  class="btn btn-primary" id="saveBtn">保存</button>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <!--
+                            data-dismiss="modal"
+                                表示关闭模态窗口 type="button"
+                        -->
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <!--        提交方式为表单提交，所以得放在表单域里面，AJAX不太会     <button type="submit"  class="btn btn-primary" id="saveBtn">保存</button>-->
+                        <!--                        //http://localhost:1005/saveTeacher?teacherName=87&teacherPassword=123-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--                后加的-->
+                <div class="btn-group" style="position: relative; top: 18%;">
+                  <!--
+                      点击创建按钮，观察两个属性和属性值
+                      data-toggle="modal"：
+                          表示触发该按钮，将要打开一个模态窗口
+                      data-target="#createActivityModal"：
+                          表示要打开哪个模态窗口，通过#id的形式找到该窗口
+                      现在我们是以属性和属性值的方式写在了button元素中，用来打开模态窗口
+                      但是这样做是有问题的：
+                          问题在于没有办法对按钮的功能进行扩充
+                      所以未来的实际项目开发，对于触发模态窗口的操作，一定不要写死在元素当中，
+                      应该由我们自己写js代码来操作
+                  -->
+                  <button type="button" class="btn btn-primary" id="addBtn"><span class="fa fa-user-plus"></span> 创建</button>
+                </div>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th>教师ID</th>
+                      <th>教师名称</th>
+                      <th>教师密码</th>
+                      <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="adjuList,states : ${adjuList}">
+                      <th scope="row" th:text="${adjuList.adjudicatorId}">1</th>
+                      <td th:text="${adjuList.adjudicatorName}">Mark</td>
+                      <td th:text="${adjuList.adjudicatorPassword}">Otto</td>
+                      <th>
+                        <a th:href="@{'/adjuDel/'+${adjuList.adjudicatorId}}" class="dropdown-item edit"> <i class="fa fa-trash"></i>删除</a>
+                      </th>
+                    </tr>
+                    </tbody>
+
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <div th:include="common/common_footer :: commonFooter"></div>
+
+    </div>
+  </div>
+</div>
+<div th:include="common/common_onload_js :: onLoadJs"></div>
+<script>
+  $(function(){
+    $("#addBtn").click(function () {
+      $("#createActivityModal").modal("show");
+    })
+  })
+</script>
+</body>
+</html>

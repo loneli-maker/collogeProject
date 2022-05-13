@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.slf4j:slf4j-api:1.7.32">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../Program Files (x86)/Tencent/environment/apache-maven-3.6.3/m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../Program Files (x86)/Tencent/environment/apache-maven-3.6.3/m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../Program Files (x86)/Tencent/environment/apache-maven-3.6.3/m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

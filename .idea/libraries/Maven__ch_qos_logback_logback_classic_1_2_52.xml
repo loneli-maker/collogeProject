@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: ch.qos.logback:logback-classic:1.2.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../Program Files (x86)/Tencent/environment/apache-maven-3.6.3/m2/repository/ch/qos/logback/logback-classic/1.2.5/logback-classic-1.2.5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../Program Files (x86)/Tencent/environment/apache-maven-3.6.3/m2/repository/ch/qos/logback/logback-classic/1.2.5/logback-classic-1.2.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../Program Files (x86)/Tencent/environment/apache-maven-3.6.3/m2/repository/ch/qos/logback/logback-classic/1.2.5/logback-classic-1.2.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

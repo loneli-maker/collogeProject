@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+<body>
+<div class="page">
+  <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+  <div class="page-content d-flex align-items-stretch">
+    <div th:include="common/common_navigation :: commonNavigation"></div>
+
+    <div class="content-inner">
+      <!-- Page Header-->
+      <header class="page-header">
+        <div class="container-fluid">
+          <h2 class="no-margin-bottom">教师列表页</h2>
+        </div>
+      </header>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder container-fluid">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/index}">首页</a></li>
+          <li class="breadcrumb-item active">教师列表页</li>
+        </ul>
+      </div>
+      <section class="tables">
+        <div class="container-fluid"  style="margin-top: -35px;">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header d-flex align-items-center">
+                  <div class="card-body">
+                    <form class="form-inline" th:action="@{/searchsubmit}">
+
+                      <div class="form-group">
+                        教师ID：
+                        <input type="text" name="teacherId" placeholder="teacherId" class="mr-3 form-control">
+                      </div>
+                      <div class="form-group">
+                        教师名称：
+                        <input  type="text" placeholder="teacherName" name="teacherName" class="mr-3 form-control">
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> 查询</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+<!--                后加的-->
+                <!-- 创建市场活动的模态窗口 -->
+                <div class="modal fade" id="createActivityModal" role="dialog">
+                  <div class="modal-dialog" role="document" style="width: 85%;">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel1">创建市场活动</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal" th:action="@{/saveTeacher}">
+                          <div class="form-group">
+                            <label for="create-startTime" class="col-sm-2 control-label">教师姓名</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                              <input type="text" name="teacherName" class="form-control time" id="create-startDate">
+                            </div>
+                            <label for="create-endTime" class="col-sm-2 control-label">教师密码</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                              <input type="text" name="teacherPassword" class="form-control time" id="create-endDate">
+                            </div>
+                          </div>
+
+                          <button type="submit"  class="btn btn-primary" id="saveBtn">保存</button>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <!--
+                            data-dismiss="modal"
+                                表示关闭模态窗口 type="button"
+                        -->
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+<!--        提交方式为表单提交，所以得放在表单域里面，AJAX不太会     <button type="submit"  class="btn btn-primary" id="saveBtn">保存</button>-->
+<!--                        //http://localhost:1005/saveTeacher?teacherName=87&teacherPassword=123-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--                后加的-->
+                  <div class="btn-group" style="position: relative; top: 18%;">
+                    <!--
+                        点击创建按钮，观察两个属性和属性值
+                        data-toggle="modal"：
+                            表示触发该按钮，将要打开一个模态窗口
+                        data-target="#createActivityModal"：
+                            表示要打开哪个模态窗口，通过#id的形式找到该窗口
+                        现在我们是以属性和属性值的方式写在了button元素中，用来打开模态窗口
+                        但是这样做是有问题的：
+                            问题在于没有办法对按钮的功能进行扩充
+                        所以未来的实际项目开发，对于触发模态窗口的操作，一定不要写死在元素当中，
+                        应该由我们自己写js代码来操作
+                    -->
+                    <button type="button" class="btn btn-primary" id="addBtn"><span class="fa fa-user-plus"></span> 创建</button>
+                    <button type="button" class="btn btn-default" id="editBtn"><span class="fa fa-pencil"></span> 修改</button>
+                    <button type="button" class="btn btn-danger" id="deleteBtn"><span class="fa fa-minus"></span> 删除</button>
+                </div>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                      <tr>
+                        <th>教师ID</th>
+                        <th>教师名称</th>
+                        <th>教师密码</th>
+                        <th>操作</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr th:each="teacher,states : ${page.records}">
+                        <th scope="row" th:text="${teacher.teacherId}">1</th>
+                        <td th:text="${teacher.teacherName}">Mark</td>
+                        <td th:text="${teacher.teacherPassword}">Otto</td>
+                        <th>
+                          <a  class="dropdown-item edit"> <i class="fa fa-trash"></i>删除</a>
+                        </th>
+                      </tr>
+                      </tbody>
+
+                    </table>
+                  </div>
+                <div th:replace="common/page :: page"></div><!--将分页的页面包含-->
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </section>
+      <div th:include="common/common_footer :: commonFooter"></div>
+
+    </div>
+  </div>
+</div>
+<div th:include="common/common_onload_js :: onLoadJs"></div>
+<script>
+  $(function(){
+    $("#addBtn").click(function () {
+      $("#createActivityModal").modal("show");
+    })
+
+    //为保存按钮绑定事件，执行添加操作
+    // $("#saveBtn").click(function () {
+    //
+    //   $.ajax({
+    //     url : "workbench/activity/save.do",
+    //     data : {
+    //       "owner" : $.trim($("#create-owner").val()),
+    //       "name" : $.trim($("#create-name").val()),
+    //       "startDate" : $.trim($("#create-startDate").val()),
+    //       "endDate" : $.trim($("#create-endDate").val()),
+    //       "cost" : $.trim($("#create-cost").val()),
+    //       "description" : $.trim($("#create-description").val())
+    //     },
+    //     type : "post",
+    //     dataType : "json",
+    //     success : function (data) {
+    //       /*
+    //           data
+    //               {"success":true/false}
+    //        */
+    //       if(data.success){
+    //         //添加成功后
+    //         //刷新市场活动信息列表（局部刷新）
+    //         //pageList(1,2);
+    //         /*
+    //         *
+    //         * $("#activityPage").bs_pagination('getOption', 'currentPage'):
+    //         * 		操作后停留在当前页
+    //         *
+    //         * $("#activityPage").bs_pagination('getOption', 'rowsPerPage')
+    //         * 		操作后维持已经设置好的每页展现的记录数
+    //         *
+    //         * 这两个参数不需要我们进行任何的修改操作
+    //        * 	直接使用即可
+    //         *
+    //       *
+    //     *
+    //         * */
+    //         //做完添加操作后，应该回到第一页，维持每页展现的记录数
+    //         pageList(1,$("#activityPage").bs_pagination('getOption', 'rowsPerPage'));
+    //         //清空添加操作模态窗口中的数据
+    //         //提交表单
+    //         //$("#activityAddForm").submit();
+    //         /*
+    //             注意：
+    //                 我们拿到了form表单的jquery对象
+    //                 对于表单的jquery对象，提供了submit()方法让我们提交表单
+    //                 但是表单的jquery对象，没有为我们提供reset()方法让我们重置表单（坑：idea为我们提示了有reset()方法）
+    //                 虽然jquery对象没有为我们提供reset方法，但是原生js为我们提供了reset方法
+    //                 所以我们要将jquery对象转换为原生dom对象
+    //                 jquery对象转换为dom对象：
+    //                     jquery对象[下标]
+    //                 dom对象转换为jquery对象：
+    //                     $(dom)
+    //          */
+    //         $("#activityAddForm")[0].reset();
+    //         //关闭添加操作的模态窗口
+    //         $("#createActivityModal").modal("hide");
+    //       }else{
+    //         alert("添加市场活动失败");
+    //       }
+    //     }
+    //   })
+    // })
+    // //页面加载完毕后触发一个方法
+    // //默认展开列表的第一页，每页展现两条记录
+    // pageList(1,2);
+  })
+</script>
+</body>
+</html>

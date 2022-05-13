@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+  <body>
+    <div class="page">
+      <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+      <div class="page-content d-flex align-items-stretch">
+        <div th:include="common/common_navigation :: commonNavigation"></div>
+
+        <div class="content-inner">
+          <!-- Page Header-->
+          <header class="page-header">
+            <div class="container-fluid">
+              <h2 class="no-margin-bottom">Forms</h2>
+            </div>
+          </header>
+          <!-- Breadcrumb-->
+          <div class="breadcrumb-holder container-fluid">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a th:href="@{/index}">首页</a></li>
+              <li class="breadcrumb-item active"> 密码修改页           </li>
+            </ul>
+          </div>
+          <!-- Forms Section-->
+          <section class="forms">
+            <div class="page-wrapper">
+              <div class="content">
+                <div class="row">
+                  <div class="col-lg-8 offset-lg-2">
+                    <h4 class="page-title">Change Password</h4>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-8 offset-lg-2">
+                    <div style="color: seagreen;" class="success" th:text="${message}"></div>
+                    <form th:action="@{/change_password}" method="get">
+                      <div class="account-logo">
+                        <a href="index.html"><img src="assets/img/logo-dark.png" alt=""></a>
+                      </div>
+                      <div class="form-group form-focus">
+                        <label class="focus-label">Current Password</label>
+                        <input name="studentPassword" class="form-control floating" type="password">
+                      </div>
+                      <div class="form-group form-focus">
+                        <label class="focus-label">New Password</label>
+                        <input name="newPassword" class="form-control floating" type="password">
+                      </div>
+                      <div class="form-group form-focus">
+                        <label class="focus-label">New Repeat Password</label>
+                        <input class="form-control floating" type="password">
+                      </div>
+                      <div class="m-t-20 text-center">
+                        <button class="btn btn-primary submit-btn" type="submit">Change Password</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div th:include="common/common_footer :: commonFooter"></div>
+
+        </div>
+      </div>
+    </div>
+    <div th:include="common/common_onload_js :: onLoadJs"></div>
+
+  </body>
+</html>

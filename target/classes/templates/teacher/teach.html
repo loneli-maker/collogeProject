@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+<body>
+<div class="page">
+    <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+    <div class="page-content d-flex align-items-stretch">
+        <div th:include="common/common_navigation :: commonNavigation"></div>
+
+        <div class="content-inner" >
+            <!-- Page Header-->
+            <header class="page-header">
+                <div class="container-fluid">
+                    <h2 class="no-margin-bottom">用户列表页</h2>
+                </div>
+            </header>
+            <!-- Breadcrumb-->
+            <div class="breadcrumb-holder container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a th:href="@{/index}">首页</a></li>
+                    <li class="breadcrumb-item active">用户列表页</li>
+                </ul>
+            </div>
+
+            <h2>你即将指导的项目号为：<i th:text="${apply.projectId}">45</i></h2>
+        <h2>项目名称为: <i th:text="${apply.projectName}">孙悟空</i></h2>
+        <h2>学生编号为: <i th:text="${apply.studentId}">孙悟空</i></h2>
+        <h2>学生名称为: <i th:text="${apply.studentName}">孙悟空</i></h2>
+        <form id="form-save-info" th:action="@{/teacherTeach}">
+<!--    th:action="@{/teacherTeach}" method="post"-->
+            <div class="form-group">
+                <label for="txt_departmentname">请添加指导</label>
+                <input type="hidden" name="studentId" th:value="${apply.studentId}">
+                <input style="width:446.5px;height:300px" name="projectTeach" type="text"  class="form-control" id="txt_departmentname" placeholder="指导内容">
+            </div>
+<!--            th:href="@{/teacherTeach(studentId=${apply.studentId})}"-->
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
+    <input type="submit"  class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></input>
+        </form>
+            <div th:include="common/common_footer :: commonFooter"></div>
+
+
+
+        </div>
+    </div>
+</div>
+<div th:include="common/common_onload_js :: onLoadJs"></div>
+
+<script type="text/javascript">
+    $("#update").click(function() {
+        $.ajax({
+            url: "/teacherTeach",
+            type: "POST",
+            data: $("#form-save-info").serialize(),
+            dataType: "json",
+            success: function(json) {
+                if (json.state == 200) {
+                    alert("修改成功！");
+                    location.href = "usertest.html";
+                } else {
+                    alert("修改失败！" + json.message);
+                }
+            },
+        });
+        // alert("你好");
+    });
+
+</script>
+
+</body>
+</html>
+
+

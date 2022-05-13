@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+<body>
+<div class="page">
+  <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+  <div class="page-content d-flex align-items-stretch">
+    <div th:include="common/common_navigation :: commonNavigation"></div>
+
+    <div class="content-inner">
+      <!-- Page Header-->
+      <header class="page-header">
+        <div class="container-fluid">
+          <h2 class="no-margin-bottom">文章编辑页</h2>
+        </div>
+      </header>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder container-fluid">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+          <li class="breadcrumb-item active">项目申报页</li>
+        </ul>
+      </div>
+      <!-- Forms Section-->
+      <section class="forms">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- Form Elements -->
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header d-flex align-items-center">
+                  <h3 class="h4">申请 项目</h3>
+                </div>
+                <div class="card-body">
+                  <form id="form-apply" class="form-horizontal" method="get">
+                    <div class="form-group row">
+                      <label class="col-sm-3 form-control-label">项目编号为</label>
+                      <div class="col-sm-9">
+                        <input type="text"  readonly="readonly" name="projectId" th:field="${project.projectId}" class="form-control" style="width:30%";>
+<!--       type="hidden"                 th:field="${project.projectId}"  th:field="${project.projectName}"-->
+                      </div>
+                    </div>
+                    <input  type="hidden" name="studentId" th:value="${session.studentid}">
+<!--                    名称为用户测试的原因出在这里-->
+                    <input type="hidden" name="studentName" th:value="${session.username}">
+<!--                    <span>教师名称：</span>-->
+<!--                    <input  name="teacherName" th:value="${teacher.teacherName}">-->
+                    <div class="form-group row">
+                      <label class="col-sm-3 form-control-label" >教师名称</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="teacherName"  th:value="${teacher.teacherName}" style="width:30%";  class="form-control">
+                      </div>
+                    </div>
+
+                    <input type="hidden" name="teacherId" th:value="${project.teacherId}">
+                    <div class="line"></div>
+                    <div class="form-group row">
+                      <label class="col-sm-3 form-control-label" >项目名称</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="projectName"  th:field="${project.projectName}" style="width:30%";  class="form-control">
+                      </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+
+                    <div class="form-group row has-success">
+                      <label >申报内容</label>
+                      <div class="col-sm-9">
+                        <small class="help-block-none">建议使用编辑好的markdown格式直接粘贴</small>
+                        <textarea class="form-control" id="articleContent" name="projectContent" rows="10"></textarea>
+                      </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="form-group row">
+                      <div class="col-sm-4 offset-sm-3">
+                        <button type="submit" class="btn btn-secondary">取消</button>
+<!--                        <button type="button" class="btn btn-primary" id="apply">保存</button>-->
+                      </div>
+                    </div>
+                  </form>
+                  <button type="button" class="btn btn-primary" id="apply">保存</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div th:include="common/common_footer :: commonFooter"></div>
+
+    </div>
+  </div>
+</div>
+<div th:include="common/common_onload_js :: onLoadJs"></div>
+
+<script type="text/javascript">
+  $("#apply").click(function() {
+    $.ajax({
+      url: "/apply3",
+      type: "GET",
+      data: $("#form-apply").serialize(),
+      dataType: "json",
+      success: function(json) {
+        // alert("申报成功！");
+        if (json.state == 200) {
+          alert("申报成功！");
+          // setTimeout("alert('申报成功！3秒后自动跳转')", 3000);
+          window.location.replace("http://localhost:1005/querymyapply")
+        } else {
+          alert("申报失败！请再次申报" + json.message);
+          window.location.replace("http://localhost:1005/applylist1")
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>

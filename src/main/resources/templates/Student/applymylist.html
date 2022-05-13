@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+<body>
+<div class="page">
+    <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+    <div class="page-content d-flex align-items-stretch">
+        <div th:include="common/common_navigation :: commonNavigation"></div>
+
+        <div class="content-inner">
+            <!-- Page Header-->
+            <header class="page-header">
+                <div class="container-fluid">
+                    <h2 class="no-margin-bottom">文章列表页</h2>
+                </div>
+            </header>
+            <!-- Breadcrumb-->
+            <div class="breadcrumb-holder container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a th:href="@{/index}">首页</a></li>
+                    <li class="breadcrumb-item active">我的项目列表页</li>
+                </ul>
+            </div>
+            <section class="tables">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header d-flex align-items-center">
+                                    <div class="card-body">
+                                        <form class="form-inline">
+                                            <div class="form-group">
+                                                项目名称：
+                                                <input id="articleName" name="project_name" type="text" placeholder="project_name" class="mr-3 form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                老师名称：
+                                                <input id="articleAuthor" name="teacher_name" type="text" placeholder="teacher_name" class="mr-3 form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary">查询</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="alert alert-success" th:if="${not #strings.isEmpty(message)}">
+                                    <strong th:text="${message}" >成功!</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>项目ID</th>
+                                                <th>项目名称</th>
+<!--                                                <th>项目图片</th>-->
+                                                <th>负责老师号</th>
+                                                <th>负责老师名称</th>
+                                                <th>申报内容</th>
+                                                <th>指导内容</th>
+                                                <th>评审数量</th>
+                                                <th>总分</th>
+                                                <th>是否通过</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr th:each="myapply : ${myapply}">
+                                                <th scope="row" th:text="${myapply.projectId}">1</th>
+                                                <td th:text="${myapply.projectName}">Mark</td>
+<!--                                                <td>-->
+<!--                                                    <img th:src="@{/}+${myapply.projectPhoto}" width="60" height="60">-->
+<!--                                                </td>-->
+                                                <td th:text="${myapply.teacherId}">Otto</td>
+                                                <td th:text="${myapply.teacherName}">@mdo</td>
+                                                <td th:text="${myapply.projectContent}">@mdo</td>
+                                                <td th:text="${myapply.projectTeach}">@mdo</td>
+                                                <td th:text="${myapply.hasScoredAdjuNumber}">@mdo</td>
+                                                <td th:text="${myapply.projectTotalScore}">@mdo</td>
+                                                <td th:text="${myapply.passStatus}">@mdo</td>
+                                                <th>
+                                                    <!--                              th:href="@{/edit(id=${user.id})}"  th:href="@{/del/{id}(id=${user.id})}"-->
+<!--                                                    <a href="#" class="dropdown-item edit"> <i class="fa fa-remove"></i>禁用</a>-->
+                                                    <a th:href="@{/apply2(projectId=${myapply.projectId})}" class="dropdown-item edit"> <i class="fa fa-gear"></i>取消申报</a>
+                                                    <a  class="dropdown-item edit"> <i class="fa fa-trash"></i>删除</a>
+                                                </th>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <div th:include="common/common_footer :: commonFooter"></div>
+
+        </div>
+    </div>
+</div>
+<div th:include="common/common_onload_js :: onLoadJs"></div>
+
+</body>
+</html>

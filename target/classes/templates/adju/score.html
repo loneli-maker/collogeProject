@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+<body>
+<div class="page">
+  <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+  <div class="page-content d-flex align-items-stretch">
+    <div th:include="common/common_navigation :: commonNavigation"></div>
+
+    <div class="content-inner" >
+      <!-- Page Header-->
+      <header class="page-header">
+        <div class="container-fluid">
+          <h2 class="no-margin-bottom">項目打分页</h2>
+        </div>
+      </header>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder container-fluid">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/index}">首页</a></li>
+          <li class="breadcrumb-item active">項目打分页</li>
+        </ul>
+      </div>
+
+      <h2>你即将打分的项目名称为：<i th:text="${judge.apply.projectName}">45</i></h2>
+      <h2>对应学生名称为: <i th:text="${judge.apply.studentName}">孙悟空</i></h2>
+      <form id="form-save-info" th:action="@{/score2}">
+        <!--    th:action="@{/teacherTeach}" method="post"-->
+        <div class="form-group">
+<!--          <label for="txt_departmentname">请添加指导</label>-->
+          <input name="studentId" type="hidden" th:value="${judge.studentId}">
+          <input  name="projectId" type="hidden" th:value="${judge.projectId}">
+          <input  name="adjuId" type="hidden" th:value="${session.adjuId}">
+<!--type=hidd-->
+          <input style="width:326.5px;height:150px;font-size: xx-large;" type="text" name="projectScore" class="form-control" id="txt_departmentname" placeholder="请给出0~100之间的分数">
+        </div>
+        <!--            th:href="@{/teacherTeach(studentId=${apply.studentId})}"-->
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
+        <input type="submit"  class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></input>
+      </form>
+      <div th:include="common/common_footer :: commonFooter"></div>
+
+
+
+    </div>
+  </div>
+</div>
+<div th:include="common/common_onload_js :: onLoadJs"></div>
+</body>
+</html>
+
+

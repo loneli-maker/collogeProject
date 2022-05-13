@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+<body>
+<div class="page">
+  <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+  <div class="page-content d-flex align-items-stretch">
+    <div th:include="common/common_navigation :: commonNavigation"></div>
+
+    <div class="content-inner">
+      <!-- Page Header-->
+      <header class="page-header">
+        <div class="container-fluid">
+          <h2 class="no-margin-bottom">学生列表页</h2>
+        </div>
+      </header>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder container-fluid">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/index}">首页</a></li>
+          <li class="breadcrumb-item active">学生列表页</li>
+        </ul>
+      </div>
+      <section class="tables">
+        <div class="container-fluid"  style="margin-top: -35px;">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header d-flex align-items-center">
+                  <div class="card-body">
+                  </div>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th>头像</th>
+                      <th>学生ID</th>
+                      <th>姓名</th>
+                      <th>性别</th>
+                      <th>邮箱</th>
+                      <th>手机号码</th>
+                      <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="student,states : ${student}">
+<!--                      <td th:text="${student.studentAvatar}">Otto</td>-->
+                      <td>
+                        <img th:src="@{/}+${student.studentAvatar}" width="60" height="60">
+                      </td>
+                      <th scope="row" th:text="${student.studentId}">1</th>
+                      <td th:text="${student.studentName}">Mark</td>
+<!--                      <td th:text="${student.studentSex}" >Otto</td>-->
+                        <td th:text="${student.studentSex==0?'女':'男'}"></td>
+                      <td th:text="${student.studentEmail}">Otto</td>
+                      <td th:text="${student.studentPhonenumber}">Otto</td>
+
+                      <th>
+                        <a id="studentDeleBtn8" th:href="@{'/studentDel/'+${student.studentId}}"  class="dropdown-item edit"> <i class="fa fa-trash"></i>删除</a>
+                      </th>
+                    </tr>
+                    </tbody>
+
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <div th:include="common/common_footer :: commonFooter"></div>
+
+    </div>
+  </div>
+</div>
+<div th:include="common/common_onload_js :: onLoadJs"></div>
+<script>
+  $(function(){
+    $("#studentDeleBtn8").click(function () {
+        alert("请选择需要删除的记录");
+        // $.ajax({
+        //     url: "/studentDel",
+        //     type: "post",
+        //     // dataType: "json",
+        //     success: function() {
+        //         alert("注册成功！");
+        //         // setTimeout("alert('申报成功！3秒后自动跳转')", 3000);
+        //         window.location.replace("studentDel");
+        //     }
+        // });
+    });
+  })
+</script>
+</body>
+</html>

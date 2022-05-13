@@ -1,0 +1,117 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="commonNavigation">
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+        <!-- Sidebar Header-->
+        <div class="sidebar-header d-flex align-items-center">
+<style>
+    #circleImg{
+        border-radius: 50px;
+        width:80px;
+        height:100px;
+    }
+</style>
+<!--            th:src="@{/}+${student.studentAvatar}"  th:if="${not #strings.isEmpty(thIf)}"-->
+            <div th:if="${session.role=='student'}" class="avatar"><img id="circleImg" th:src="@{/}+${session.studentAvatar}" ></div>
+            <div th:if="${session.role=='teacher'}" class="avatar"><img
+
+                    th:src="@{/img/avatar-5.jpg}" class="img-fluid rounded-circle"></div>
+            <div th:if="${session.role=='adju'}" class="avatar"><img  th:src="@{/img/avatar-3.jpg}" class="img-fluid rounded-circle"></div>
+            <div th:if="${session.role=='admin'}" class="avatar"><img  th:src="@{/img/avatar-8.jpg}" class="img-fluid rounded-circle"></div>
+
+<!--            <div class="avatar"><img id="circleImg" th:src="@{/}+${session.studentAvatar}" ></div>-->
+            <div class="title" style="margin-left:40px;">
+                <i>您好,
+                    <span th:if="${session.role=='student'}" th:text="学生"></span>
+                    <span th:if="${session.role=='teacher'}" th:text="教师"></span>
+                    <span th:if="${session.role=='adju'}" th:text="评审员"></span>
+                    <span th:if="${session.role=='admin'}" th:text="管理员"></span>
+
+                </i>
+                <h1 class="h4" th:if="${session.role=='student'}" th:text="${session.userLogin.studentName}"></h1>
+                <h1 class="h4" th:if="${session.role=='teacher'}" th:text="${session.userLogin.teacherName}"></h1>
+                <h1 class="h4" th:if="${session.role=='adju'}" th:text="${session.userLogin.adjudicatorName}"></h1>
+                <h1 class="h4" th:if="${session.role=='admin'}" th:text="${session.userLogin.adminName}"></h1>
+               <p th:if="${session.role=='student'}" th:text="${session.userLogin.studentPhonenumber}">Web Designer</p>
+            </div>
+        </div>
+
+        <span class="heading">Main</span>
+        <ul class="list-unstyled">
+
+            <li><a th:href="@{/index}"> <i class="icon-home"></i>首页</a></li>
+            <!--            老师功能开始-->
+            <div th:if="${session.role=='teacher'}">
+            <li class="active"><a href="#article" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-keyboard-o"></i>项目管理</a>
+                <ul id="article" class="collapse list-unstyled ">
+                    <li><a th:href="@{/projectlist}">项目列表</a></li>
+                    <li><a th:href="@{/projectAdd}">添加项目</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#teacher" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-user"></i>教师管理</a>
+                <ul id="teacher" class="collapse list-unstyled ">
+                    <li><a th:href="@{/queryAllneedguideApply}">待指导项目列表</a></li>
+                    <li><a th:href="@{/projectAdd}">添加项目</a></li>
+                </ul>
+            </li>
+            </div>
+<!--            老师功能结束-->
+<!--            评审员功能开始-->
+            <div th:if="${session.role=='adju'}">
+<!--            <li><a href="#link" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-link"></i>评审员管理</a>-->
+<!--                <ul id="link" class="collapse list-unstyled ">-->
+<!--&lt;!&ndash;                    <li><a th:href="@{/applylist}">分配评审员</a></li>&ndash;&gt;-->
+<!--                    <li><a th:href="@{/AddAdjuServlet1}">分配评审员</a></li>-->
+<!--                    <li><a th:href="@{/allotedit}">新增友情链接</a></li>-->
+<!--                </ul>-->
+<!--            </li>-->
+                <li><a th:href="@{/listneed}"> <i class="icon-mail"></i>打分管理</a></li>
+            </div>
+            <!--            评审员功能结束-->
+
+<!--            学生功能开始-->
+            <div th:if="${session.role=='student'}">
+                <li><a href="#tag" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-list"></i>系统管理</a>
+                    <ul id="tag" class="collapse list-unstyled ">
+                        <li><a th:href="@{/applylist1}">申报项目</a></li>
+                        <li><a th:href="@{/querymyapply}">查看已申报项目</a></li>
+                    </ul>
+                </li>
+            <li><a href="#user" aria-expanded="false" data-toggle="collapse"> <i class="icon-user"></i>个人管理</a>
+                <ul id="user" class="collapse list-unstyled ">
+                    <li><a th:href="@{/queryStuInfo}">查看个人信息</a></li>
+                    <li><a th:href="@{/cpassword}">修改密码</a></li>
+                </ul>
+            </li>
+            </div>
+<!--            学生功能结束-->
+<!--            管理员功能开始-->
+            <div th:if="${session.role=='admin'}">
+            <li><a href="#role" aria-expanded="false" data-toggle="collapse"> <i class="icon-user"></i>用户管理</a>
+                <ul id="role" class="collapse list-unstyled ">
+                    <li><a th:href="@{/selectAllStudentList}">学生列表</a></li>
+                    <li><a th:href="@{/teacherList}">教师管理</a></li>
+                    <li><a th:href="@{/adjuList}">评审员管理</a></li>
+                </ul>
+            </li>
+                <li><a th:href="@{/projectlist}"><i class="fa fa-th-list"></i>项目列表</a></li>
+                <li><a href="#link" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-link"></i>评审员管理</a>
+                    <ul id="link" class="collapse list-unstyled ">
+                        <!--                    <li><a th:href="@{/applylist}">分配评审员</a></li>-->
+                        <li><a th:href="@{/AddAdjuServlet1}">分配评审员</a></li>
+<!--                        <li><a th:href="@{/allotedit}">新增友情链接</a></li>-->
+                    </ul>
+                </li>
+                <li><a th:href="@{/selectAllpass}"><i class="fa fa-database"></i>查看已通过项目</a></li>
+                <li><a th:href="@{/cpassword}"><i class="fa fa-newspaper-o"></i>修改密码</a></li>
+            <li><a th:href="@{/login}"> <i class="icon-interface-windows"></i>Login page </a></li>
+<!--                管理员功能结束-->
+            </div>
+        </ul>
+        <!--        <h1 class="h4" th:if="${session.role=='student'}" th:text="${session.userLogin.studentName}"></h1>-->
+        <!--        <h1 class="h4" th:if="${session.role=='teacher'}" th:text="${session.userLogin.teacherName}"></h1>-->
+        <!--        <h1 class="h4" th:if="${session.role=='adju'}" th:text="${session.userLogin.adjudicatorName}"></h1>-->
+        <!--        <h1 class="h4" th:if="${session.role=='admin'}" th:text="${session.userLogin.adminName}"></h1>-->
+    </nav>
+</div>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.ProPlusDao">
+    <resultMap id="projectPlus" type="com.itheima.domain.ProPlus">
+        <id column="project_id" property="projectId"></id>
+        <result column="project_name" property="projectName"></result>
+        <result column="project_info" property="projectInfo"></result>
+        <result column="teacher_id" property="teacherId"></result>
+        <result column="teacher_name" property="teacher.teacherName"></result>
+    </resultMap>
+
+    <select id="selectAllApplyProjects" parameterType="map" resultMap="projectPlus">
+--         select j.student_id,j.project_id,a.student_id,a.student_name,a.project_name,a.project_content from judge j left join apply a on j.student_id=a.student_id;
+        SELECT p.*,t.teacher_name from project p left join teacher t on p.teacher_id=t.teacher_id
+--         SELECT p.*,t.teacher_name from project p left join teacher t on p.teacher_id=t.teacher_id
+        <where>
+            <if test="project_id != null and project_id != 0">
+                and project_id = #{project_id}
+            </if>
+            <if test="project_name != null and project_name != ''">
+                and project_name like '%' #{project_name} '%'
+            </if>
+            <if test="teacher_name!=null and teacher_name != ''">
+                and teacher_name = #{teacher_name}
+            </if>
+            <if test="teacher_name!=null and teacher_name != ''">
+                and teacher_name = #{teacher_name}
+            </if>
+        </where>
+    </select>
+<!--    <select id="selectOneApplyProjects" resultMap="projectPlus" parameterType="integer">-->
+<!--        SELECT p.*,t.teacher_name from project p left join teacher t on p.teacher_id=t.teacher_id where project_id=#{projectd};-->
+<!--    </select>-->
+<!--    SELECT * from project join teacher  on project.teacher_id=teacher.teacher_id-->
+<!--    WHERE project_id = #{project_id}-->
+
+</mapper>

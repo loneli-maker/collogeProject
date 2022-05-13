@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.TeacherDao">
+    <resultMap id="project" type="com.itheima.domain.Project">
+        <id column="project" property="projectId"></id>
+        <result column="project_name" property="projectName"></result>
+        <result column="project_info" property="projectInfo"></result>
+        <result column="teacher_id" property="teacherId"></result>
+    </resultMap>
+    <update id="changeProjectProgress">
+        update apply set project_progress=concat(project_progress,#{new_projectProgress})
+        where  student_id = #{studentId}
+    </update>
+
+    <select id="searchProjectGroupbyTeacher" resultMap="project">
+        SELECT
+            *
+        FROM
+            project
+        WHERE
+            teacher_id=#{teacherId}
+    </select>
+    <select id="selectOne" resultType="com.itheima.domain.Teacher">
+        select * from teacher
+            where teacher_name=#{teacherName} and teacher_password=#{teacherPassword}
+    </select>
+    <select id="selectByPTeacher" resultType="com.itheima.domain.Apply">
+        select * from apply
+        where teacher_id=#{teacherId} and project_teach='未指导'
+    </select>
+
+
+</mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.StudentDao">
+
+    <!--    <resultMap id="studentLogin" type="com.itheima.domain.Student">-->
+<!--        <id column="student_id" property="studentId"></id>-->
+<!--        <result column="student_name" property="studentName"></result>-->
+<!--        <result column="student_password" property="studentPassword"></result>-->
+<!--    </resultMap>-->
+
+    <select id="selectOne" resultType="com.itheima.domain.Student">
+        SELECT
+            *
+        FROM
+            student
+        WHERE
+            student_name=#{studentName} and student_password=#{studentPassword}
+    </select>
+    <update id="updatePasswordByUid">
+        UPDATE
+            student
+        SET
+            student_password = #{studentPassword}
+        WHERE
+            student_id = #{studentId}
+    </update>
+
+    <update id="updateAvatarByUid">
+        UPDATE
+            student
+        SET
+            student_avatar = #{studentAvatar}
+        WHERE
+            student_id = #{studentId}
+    </update>
+    <select id="selectByStudentname" resultType="com.itheima.domain.Student">
+        SELECT
+            *
+        FROM
+            student
+        WHERE
+            student_name = #{studentName}
+    </select>
+
+</mapper>

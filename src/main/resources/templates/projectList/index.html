@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+<body>
+<div class="page">
+  <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+  <div class="page-content d-flex align-items-stretch">
+    <div th:include="common/common_navigation :: commonNavigation"></div>
+
+    <div class="content-inner">
+      <!-- Page Header-->
+      <header class="page-header">
+        <div class="container-fluid">
+          <h2 class="no-margin-bottom">项目列表页</h2>
+        </div>
+      </header>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder container-fluid">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/index}">首页</a></li>
+          <li class="breadcrumb-item active">项目列表页</li>
+        </ul>
+      </div>
+      <section class="tables">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header d-flex align-items-center">
+                  <div class="card-body">
+                    <form class="form-inline">
+                      <div class="form-group">
+                        项目ID：
+                        <input id="articleId" name="project_id" type="text" placeholder="project_id" class="mr-1 form-control">
+                      </div>
+                      <div class="form-group">
+                        项目名称：
+                        <input id="articleName" name="project_name" type="text" placeholder="project_name" class="mr-3 form-control">
+                      </div>
+
+
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary">查询</button>
+                      </div>
+                      <div class="form-group">
+                        <!--                        <input  name="teacher_id" type="hidden" class="mr-3 form-control">-->
+<!--                        <span th:if="${session.role=='student'}" th:text="学生"></span>-->
+                      <div th:if="${session.role=='teacher'}"><a  type="button" th:href="@{/projectmyTeacherlist}" class="mr-3 form-control" style="margin-left: 10px;background-color: #d7ce93" >我创建的项目</a></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                      <tr>
+                        <th>项目ID</th>
+                        <th>项目图片</th>
+                        <th>项目名称</th>
+                        <th>项目内容</th>
+                        <th>操作</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr th:each="project,state:${page.records}" class="row1">
+                        <td th:inline="text" th:text="${project.projectId}">3</td>
+                        <td>
+                          <img th:src="@{/}+${project.projectPhoto}" width="60" height="60">
+                        </td>
+                        <td th:text="${project.projectName}">Mark</td>
+                        <td th:text="${project.projectInfo}">Otto</td>
+                        <th>
+                          <a th:href="@{/projectAdd}"  class="dropdown-item edit"> <i class="fa fa-gear"></i>更新</a>
+                          <a  class="dropdown-item edit"> <i class="fa fa-trash"></i>删除</a>
+                        </th>
+                      </tr>
+                      </tbody>
+                      <th>
+                        <a th:href="@{/projectAdd}"  class="dropdown-item edit"> <i class="fa fa-plus"></i>添加</a>
+                      </th>
+                    </table>
+                  </div>
+                  <div th:replace="common/page :: page"></div><!--将分页的页面包含-->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <div th:include="common/common_footer :: commonFooter"></div>
+
+    </div>
+  </div>
+</div>
+<div th:include="common/common_onload_js :: onLoadJs"></div>
+
+</body>
+</html>

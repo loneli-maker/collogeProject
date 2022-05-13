@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AdminDao">
+    <update id="setAdju">
+        insert into judge (student_id,project_id,adju_id)
+        VALUES(#{studentId},#{projectId},#{adjuId})
+    </update>
+    <update id="setSelectedProjectPass">
+        update apply set pass_status ='通过' where student_id=#{studentId}
+    </update>
+
+    <select id="selectOne" resultType="com.itheima.domain.Admin">
+        SELECT
+            *
+        FROM
+            admin
+        WHERE
+            admin_name=#{adminName} and admin_password=#{adminPassword}
+    </select>
+    <select id="passAllApply" resultType="com.itheima.domain.Apply">
+        select * from apply where pass_status='通过'
+    </select>
+
+
+    <!--save-->
+    <insert id="save" parameterType="com.itheima.domain.Project" useGeneratedKeys="true" keyProperty="id">
+        insert into `project` values (#{project_id},#{project_name},#{project_info},#{project_photo})
+    </insert>
+
+
+</mapper>

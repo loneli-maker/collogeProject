@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common_head::commonHeader"></head>
+
+  <body>
+    <div class="page">
+      <div th:include="common/common_mainnavbar :: commonMainNavbar"></div>
+
+      <div class="page-content d-flex align-items-stretch">
+        <div th:include="common/common_navigation :: commonNavigation"></div>
+
+        <div class="content-inner">
+          <!-- Page Header-->
+          <header class="page-header">
+            <div class="container-fluid">
+              <h2 class="no-margin-bottom">打分管理页</h2>
+            </div>
+          </header>
+          <!-- Breadcrumb-->
+          <div class="breadcrumb-holder container-fluid">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a th:href="@{/index}">首页</a></li>
+              <li class="breadcrumb-item active">打分管理页</li>
+            </ul>
+          </div>
+          <section class="tables">   
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="card">
+                        <div class="card-header d-flex align-items-center">
+                          <div class="card-body">
+                            <form class="form-inline">
+                              <div class="form-group">
+                                学生名称：
+                                <input name="student_name" type="text" placeholder="student_name" class="mr-1 form-control">
+                              </div>
+                              <div class="form-group">
+                                项目名称：
+                                <input  name="project_name" type="text" placeholder="project_name" class="mr-3 form-control">
+                              </div>
+                              <div class="form-group">
+                                <button type="submit" class="btn btn-primary">查询</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+
+                       <h3 style="color: #1e7e34;margin:15px 10px 0px 50px;" th:if="${#strings.isEmpty(msg)}">目前没有需要评审的项目,请等待管理员添加。</h3>
+                        <h3 style="color: #2b90d9;margin:15px 10px 0px 50px;" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></h3>
+
+                        <div class="card-body">
+                          <div class="table-responsive">
+                            <table class="table">
+                              <thead>
+                              <tr>
+                                <th>学生ID</th>
+                                <th>学生名称</th>
+                                <th>项目号</th>
+                                <th>项目名称</th>
+                                <th>申请内容</th>
+                                <th>操作</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr th:each="judge : ${judge}">
+                                <th scope="row" th:text="${judge.studentId}">1</th>
+                                <td th:text="${judge.apply.studentName}">Mark</td>
+                                <td th:text="${judge.projectId}">Mark</td>
+                                <td th:text="${judge.apply.projectName}">Otto</td>
+                                <td th:text="${judge.apply.projectContent}">@mdo</td>
+                                <th>
+                                  <!--                              th:href="@{/edit(id=${user.id})}"  th:href="@{/del/{id}(id=${user.id})}"-->
+                                  <a href="#" class="dropdown-item edit"> <i class="fa fa-eye"></i>预览</a>
+<!--                                  th:href="@{/projectapply(projectId=${project.projectId})}"-->
+                                  <a th:href="@{/score1(studentId=${judge.studentId},projectId=${judge.projectId},adjuId=${session.adjuId})}" class="dropdown-item edit"> <i class="fa fa-gear"></i>打分</a>
+                                  <a  class="dropdown-item edit"> <i class="fa fa-trash"></i>删除</a>
+                                </th>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+          <div th:include="common/common_footer :: commonFooter"></div>
+
+        </div>
+      </div>
+    </div>
+    <div th:include="common/common_onload_js :: onLoadJs"></div>
+
+  </body>
+</html>

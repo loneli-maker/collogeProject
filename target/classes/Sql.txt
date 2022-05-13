@@ -1,0 +1,77 @@
+
+queryAllNonAdju
+  select * from judge where adju_id=001 and is_judged='未评分';
+
+setAdju
+INSERT INTO judge(student_id," +
+                "project_id,adju_id) VALUES(?,?,?)")
+
+addScore(String studentID, String projectID, String adjuID, String newScore,int hasScoredAdjuNumber
+UPDATE judge SET project_score=\'" + newScore + "\' WHERE " +
+                "student_id=\'" + studentID + "\' and project_id=\'" + projectID +
+                "\' and adju_id=\'" + adjuID + "\'"))
+
+                  public boolean addScore(String studentID, String projectID, String adjuID, String newScore,int hasScoredAdjuNumber) {
+                        if (prepareMySql("UPDATE judge SET project_score=\'" + newScore + "\' WHERE " +
+                                "student_id=\'" + studentID + "\' and project_id=\'" + projectID +
+                                "\' and adju_id=\'" + adjuID + "\'")) {
+                            try {
+                                pstmt.executeUpdate();
+                                hasScoredAdjuNumber++;
+
+                                String sql = "UPDATE apply SET has_scored_adju_number=\'" +
+                                        hasScoredAdjuNumber + "\' WHERE student_id=\'" +
+                                        studentID + "\'";
+                                pstmt = conn.prepareStatement(sql);
+                                pstmt.executeUpdate();
+
+                                sql = "UPDATE judge SET is_judged=\'已评分\' WHERE " +
+                                        "student_id=\'" + studentID + "\' and project_id=\'" + projectID +
+                                        "\' and adju_id=\'" + adjuID + "\'";
+                                pstmt = conn.prepareStatement(sql);
+                                pstmt.executeUpdate();
+
+
+updateTotalScore(String studentID, String totalScore) {
+   UPDATE apply SET project_total_score=\'" +  totalScore + "\' WHERE student_id=\'" + studentID + "\'")) {
+   }
+
+
+
+
+    @RequestMapping("loginServelt")
+       public String login(Map<String, Object> map,
+                           HttpServletRequest request, HttpSession session, ModelAndView mv) {
+           String name = request.getParameter("username");
+           String password = request.getParameter("password");
+           String role = request.getParameter("role");
+
+C:\Users\yqwld\AppData\Local\Temp\tomcat-docbase.1005.5134775979729381047\upload
+
+getSelectedProjectAdjuNumber
+SELECT adju_number from apply WHERE student_id=\'" + studentID +
+
+
+3月17 SQL语句  ： boolean setSelectedProjectPass(String studentID)
+UPDATE apply SET pass_status='通过' WHERE student_id=\'" + studentID + "\'"
+setSelectedProjectAdjuNumber(String studentID, String adjuNumber)
+"UPDATE apply SET adju_number=\'" + Integer.toString(adjudicatorNumber) + "\' WHERE student_id" +"=\'" + studentID
+    //n您已添加了多少个项目projectNumber()"SELECT COUNT(*) AS ProjectNumber FROM project"
+queryProjectGroupByTeacherID
+SELECT * FROM apply WHERE teacher_id=\'" + teacherID +
+addProjectTeach(String studentID,String projectTeach)
+UPDATE apply SET project_teach=\'" + projectTeach + "\' WHERE student_id=\'" + studentID
+changeProjectProgress(String studentID, String status)   teacherDAO.changeProjectProgress(thisStudentID,"已辅导，待通过")
+UPDATE apply SET project_progress=\'" + status + "\' WHERE student_id=\'" + studentID
+
+boolean setAdju(JudgeBean judgeBean)  //为项目分配评审员
+INSERT INTO judge(student_id," + "project_id,adju_id) VALUES(?,?,?)
+boolean isRepetitive(String adjuID, String studentID, String project_id)
+SELECT COUNT(*) AS peopleNumber FROM judge WHERE adju_id=\'" + adjuID + "\' and" +" student_id=\'" + studentID + "\' and" + " project_id=\'" + project_id
+List<JudgeBean> queryAllNonAdju(String adjuID)
+SELECT * FROM judge WHERE is_judged=\'未评分\' and adju_id=\'" + adjuID +
+addScore(String studentID, String projectID, String adjuID, String newScore,int hasScoredAdjuNumber)
+UPDATE judge SET project_score=\'" + newScore + "\' WHERE " +student_id=\'" + studentID + "\' and project_id="+ projectID + and adju_id=\'" + adjuID
+updateTotalScore   UPDATE apply SET project_total_score=" + totalScore + "\' WHERE student_id=\'" + studentID + "\'")
+queryAllNeededAdjuProject(String adjuID)    "SELECT * FROM judge WHERE adju_id=\'" + adjuID
+teacherDAO.changeProjectProgress(studentID, "已辅导，并通过，已评分")
