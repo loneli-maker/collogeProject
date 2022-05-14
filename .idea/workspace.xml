@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b42e35f-8b48-4ffb-beee-24c8fdcdbf33" name="Default Changelist" comment="" />
+    <list default="true" id="1b42e35f-8b48-4ffb-beee-24c8fdcdbf33" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,9 +64,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -204,8 +208,16 @@
       <workItem from="1651938515401" duration="3045000" />
       <workItem from="1651967203962" duration="2965000" />
       <workItem from="1652449551970" duration="2031000" />
-      <workItem from="1652452051672" duration="437000" />
+      <workItem from="1652452051672" duration="1452000" />
     </task>
+    <task id="LOCAL-00001" summary="第一次上交，大学生创新创业管理系统，热乎的，要的自取，记得点赞哦！">
+      <created>1652453057238</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652453057238</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +237,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="管理员操作用户管理模块，模态弹框的增删改查和分页。" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员操作用户管理模块，模态弹框的增删改查和分页。" />
+    <MESSAGE value="第一次上交，大学生创新创业管理系统，热乎的，要的自取，记得点赞哦！" />
+    <option name="LAST_COMMIT_MESSAGE" value="第一次上交，大学生创新创业管理系统，热乎的，要的自取，记得点赞哦！" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
