@@ -37,10 +37,10 @@
 
 
 #### 使用说明
-1、登陆界面，如果CSS有点变形，可能是bootstrap样式或者前端模板有点问题，第二次登陆就是正常的，感兴趣的也可以自己去改前端页面，反正不用动后端接口就行，这个很简单的。
+1、登陆界面，如果CSS有点变形，可能是bootstrap样式或者前端模板有点问题，第二次登陆就是正常的，感兴趣的也可以自己去改前端页面，反正不用动后端接口就行
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/12ab320e-5a8e-49ec-a681-7d57786d4a72)
 
-2、配置文件里的路径需要改，绝对路劲都需要改成你自己的，photo所属的绝对路劲，复制你的路劲/photo，photo不要动，要不然修改投降、图片之类的会空指针。根据打印日志看问题，修改路劲。
+2、配置文件里的路径需要改，绝对路劲都需要改成你自己的，photo所属的绝对路劲，复制你的路劲/photo，photo不要动，要不然修改头像、图片之类的会空指针。根据打印日志看问题，修改路劲。
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/cc1c1625-e44d-4c3b-adf9-c44a65209861)
 
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/1718e36b-ea34-4a65-b3cb-9736349febe0)
