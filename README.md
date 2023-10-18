@@ -19,19 +19,11 @@
    1、下载idea工具，工具里面可以直接下载JDK，或者导入JDK1.8。
    ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/fac0886d-f66f-4632-99c2-c5e066e2e52c)
 
-   2、下载maven(下载3.5版本是最好的，别下最新的，最新的有些依赖可能找不到，如果pom.xml文件里仍有依赖报红，多加载几次，结合csdn、博客园解决，一般不会卡太久），并配置阿里云镜像，配置仓库路径，配置环境变量。
+   2、下载maven(下载3.6版本是最好的，别下最新的，最新的有些依赖可能找不到，如果pom.xml文件里仍有依赖报红，多加载几次，结合csdn、博客园解决，一般不会卡太久），并配置阿里云镜像，配置仓库路径，配置环境变量。
    ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/5ecba29f-5ca6-41ed-a554-edba21dfebc7)
 
-   <!--仓库位置自定义-->
-<localRepository>E:\Study\idea\sourceCode\apache-maven-3.9.5\maven-repository</localRepository>
-   <!--添加阿里云镜像-->
-<mirror>
-      <id>nexus-aliyun</id>
-      <mirrorOf>central</mirrorOf>
-      <name>Nexus aliyun</name>
-      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-    </mirror>
-   3、其他配置可自行百度。
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/d53a08fb-5f04-4d8a-9b5f-1c02ef67b8ae)
+
 
 #### mysql数据库安装并导入数据
 1、安装mysql5.7,网上自行百度
@@ -41,16 +33,30 @@
 3、检查application.properties，里面的信息自己去改，包括端口号、数据库名称、mysql用户名和密码，这个很简单的就不多说。
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/6e84bb5c-eacb-438f-b5cc-a0f133e0f60a)
 
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/6b7ab8a9-9ede-45cc-9e0a-960abc9d94b9)
+
+
 #### 使用说明
+1、登陆界面，如果CSS有点变形，可能是bootstrap样式或者前端模板有点问题，第二次登陆就是正常的，感兴趣的也可以自己去改前端页面，反正不用动后端接口就行，这个很简单的。
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/12ab320e-5a8e-49ec-a681-7d57786d4a72)
+
+2、配置文件里的路径需要改，绝对路劲都需要改成你自己的，photo所属的绝对路劲，复制你的路劲/photo，photo不要动，要不然修改投降、图片之类的会空指针。根据打印日志看问题，修改路劲。
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/cc1c1625-e44d-4c3b-adf9-c44a65209861)
+
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/1718e36b-ea34-4a65-b3cb-9736349febe0)
+
+2、学生申报项目
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/20cc1b8f-e31d-49bf-b696-4d145c63ea26)
+3、教师开设项目课题、知道学生申报的项目。
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/361b23c7-887c-431c-955e-7aa9bd9542b7)
+3、评审员对项目进行打分
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/1a948358-7d85-4dc9-a00a-6ce6dc139f59)
 
 
+4、管理员可以管理学生、老师、评审员的基本信息；可以分配学生申报的项目给哪些评审员评审，也可以根据评审员所打的分是否通过该创新创业项目。其他小功能可自行摸索。
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/d86d10c3-ae85-4a94-a9ee-3a638641414e)
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/8d8b4f6a-845b-4782-9ea7-eb286725c22e)
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
 
 
 #### 特技
