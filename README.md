@@ -16,11 +16,30 @@
 #### 安装教程
 ### 本地手工部署
 #### idea安装与配置
-   1、下载idea工具，工具里面直接下载JDK，或者导入JDK1.8。
-   2、下载maven，并配置阿里云镜像，配置仓库路径，配置环境变量。
-   3、其他工具配置可自行百度。
-2.  xxxx
-3.  xxxx
+   1、下载idea工具，工具里面可以直接下载JDK，或者导入JDK1.8。
+   ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/fac0886d-f66f-4632-99c2-c5e066e2e52c)
+
+   2、下载maven(下载3.5版本是最好的，别下最新的，最新的有些依赖可能找不到，如果pom.xml文件里仍有依赖报红，多加载几次，结合csdn、博客园解决，一般不会卡太久），并配置阿里云镜像，配置仓库路径，配置环境变量。
+   ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/5ecba29f-5ca6-41ed-a554-edba21dfebc7)
+
+   <!--仓库位置自定义-->
+<localRepository>E:\Study\idea\sourceCode\apache-maven-3.9.5\maven-repository</localRepository>
+   <!--添加阿里云镜像-->
+<mirror>
+      <id>nexus-aliyun</id>
+      <mirrorOf>central</mirrorOf>
+      <name>Nexus aliyun</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+    </mirror>
+   3、其他配置可自行百度。
+
+#### mysql数据库安装并导入数据
+1、安装mysql5.7,网上自行百度
+2、创建数据库，名称study,导入数据库文件sql.txt，把后缀改为sql，或者直接复制sql内容去执行。
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/9559d5c7-d5d5-4057-b31c-69fbf0fcf4d8)
+
+3、检查application.properties，里面的信息自己去改，包括端口号、数据库名称、mysql用户名和密码，这个很简单的就不多说。
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/6e84bb5c-eacb-438f-b5cc-a0f133e0f60a)
 
 #### 使用说明
 
