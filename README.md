@@ -44,10 +44,10 @@
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/cc1c1625-e44d-4c3b-adf9-c44a65209861)
 
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/1718e36b-ea34-4a65-b3cb-9736349febe0)
-
-2、学生申报项目
+### 各模块功能
+1、学生申报项目
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/20cc1b8f-e31d-49bf-b696-4d145c63ea26)
-3、教师开设项目课题、知道学生申报的项目。
+2、教师开设项目课题、知道学生申报的项目。
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/361b23c7-887c-431c-955e-7aa9bd9542b7)
 3、评审员对项目进行打分
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/1a948358-7d85-4dc9-a00a-6ce6dc139f59)
