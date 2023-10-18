@@ -59,11 +59,6 @@
 
 
 
-#### 特技
+#### 写在最后
+由于该系统的数据库设计的太烂了。过于急躁，业务逻辑结构太混乱了。导致系统功能不丰富。该系统二次开发的收益不大，建议重新设计数据表，可拷贝该项目的增删改查contoller层接口（服务端的通用API）、工具类、前端代码之类的。可为你节省大量时间。对web开发（Java web、php web感兴趣的可私信我。共同学习，觉得有用的可以点个赞，上传不易，感谢捐赠。）
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
