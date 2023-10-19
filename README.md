@@ -45,7 +45,8 @@
 
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/1718e36b-ea34-4a65-b3cb-9736349febe0)
 ### 各模块功能
-1、学生申报项目
+1、学生登录首页和申报项目
+![1697691129534](https://github.com/loneli-maker/collogeProject/assets/79433596/2925aafb-f51e-4c14-98fb-fdb3c0e19a41)
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/20cc1b8f-e31d-49bf-b696-4d145c63ea26)
 2、教师开设项目课题、指导学生申报的项目。
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/361b23c7-887c-431c-955e-7aa9bd9542b7)
@@ -55,7 +56,8 @@
 
 4、管理员可以管理学生、老师、评审员的基本信息；可以分配学生申报的项目给哪些评审员评审，也可以根据评审员所打的分 判断是否通过该创新创业项目。其他小功能可自行摸索。
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/d86d10c3-ae85-4a94-a9ee-3a638641414e)
-![image](https://github.com/loneli-maker/collogeProject/assets/79433596/8d8b4f6a-845b-4782-9ea7-eb286725c22e)
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/120972bb-35a7-4d6b-841e-dcbba0a6dc5a)
+
 
 
 
