@@ -46,6 +46,7 @@
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/1718e36b-ea34-4a65-b3cb-9736349febe0)
 ### 各模块功能
 1、学生登录首页和申报项目
+![7b5af7197172086beb56f1d158504dc](https://github.com/loneli-maker/collogeProject/assets/79433596/b536b6ef-a052-4c9c-8882-e1465c34f34d)
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/20cc1b8f-e31d-49bf-b696-4d145c63ea26)
 2、教师开设项目课题、指导学生申报的项目。
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/361b23c7-887c-431c-955e-7aa9bd9542b7)
