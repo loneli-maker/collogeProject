@@ -1,6 +1,6 @@
 ## 写在前面
 已经毕业一年多了，很久没来这里看自己的东西了，收到不少网友关于项目如何部署的帖子，我以为只要代码放上去，即使环境有点偏差，大家也能调试出来，毕竟简单。
-为了方便网友部署，博主手把手亲自教。如果觉得有用的可以点个赞，另外也可以+V BashTough     ，一起讨论计算机科学与技术的哪些知识，包含计算机网络、c/Java/php程序语言、数据库设计、web程序开发、
+为了方便网友部署，博主手把手亲自教。如果觉得有用的可以点个赞，另外也可以+V Red-Salvation     ，一起讨论计算机科学与技术的哪些知识，包含计算机网络、c/Java/php程序语言、数据库设计、web程序开发、
 软件系统业务研究、linux应用、shell自动化编程等知识；逐步深入IT信息行业，成为软件行业的拥护者。
 ##### 微信捐赠
 ![e1dba6cd6e63a43c164f1cb8da4384f](https://github.com/loneli-maker/collogeProject/assets/79433596/b01a7604-9b92-4ac8-ba8a-b5dbac5bf436)
@@ -19,11 +19,6 @@
    1、下载idea工具，工具里面可以直接下载JDK，或者导入JDK1.8。
    ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/fac0886d-f66f-4632-99c2-c5e066e2e52c)
 
-   2、下载maven(下载3.6版本是最好的，别下最新的，最新的有些依赖可能找不到，如果pom.xml文件里仍有依赖报红，多加载几次，结合csdn、博客园解决，一般不会卡太久），并配置阿里云镜像，配置仓库路径，配置环境变量。
-   ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/5ecba29f-5ca6-41ed-a554-edba21dfebc7)
-
-![image](https://github.com/loneli-maker/collogeProject/assets/79433596/d53a08fb-5f04-4d8a-9b5f-1c02ef67b8ae)
-
 
 #### mysql数据库安装并导入数据
 1、安装mysql5.7,网上自行百度
@@ -39,11 +34,6 @@
 #### 使用说明
 1、登陆界面，如果CSS有点变形，可能是bootstrap样式或者前端模板有点问题，第二次登陆就是正常的，感兴趣的也可以自己去改前端页面，反正不用动后端接口就行
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/12ab320e-5a8e-49ec-a681-7d57786d4a72)
-
-2、配置文件里的路径需要改，绝对路劲都需要改成你自己的，photo所属的绝对路劲，复制你的路劲/photo，photo不要动，要不然修改头像、图片之类的会空指针。根据打印日志看问题，修改路径。
-![image](https://github.com/loneli-maker/collogeProject/assets/79433596/cc1c1625-e44d-4c3b-adf9-c44a65209861)
-
-![image](https://github.com/loneli-maker/collogeProject/assets/79433596/1718e36b-ea34-4a65-b3cb-9736349febe0)
 ### 各模块功能
 1、学生登录首页和申报项目
 ![7b5af7197172086beb56f1d158504dc](https://github.com/loneli-maker/collogeProject/assets/79433596/b536b6ef-a052-4c9c-8882-e1465c34f34d)
