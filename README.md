@@ -57,6 +57,8 @@
 4、管理员可以管理学生、老师、评审员的基本信息；可以分配学生申报的项目给哪些评审员评审，也可以根据评审员所打的分 判断是否通过该创新创业项目。其他小功能可自行摸索。
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/d86d10c3-ae85-4a94-a9ee-3a638641414e)
 ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/120972bb-35a7-4d6b-841e-dcbba0a6dc5a)
+![f7340e647a81f5a3dfd2c76a35fec99](https://github.com/loneli-maker/collogeProject/assets/79433596/cf3e7d0c-889a-449e-830a-c66d6e9c7f28)
+
 
 
 
