@@ -9,7 +9,11 @@
 江苏交通学院：大学生创新创业管理系统。这是一个SpingBoot框架写的管理系统，针对大学生创新创业项目的管理，完成了项目的申报、指导、评审等过程。 项目设计技术点：Java、SSM、SpringBoot、MybatisPlus、Jquery、Ajax、Thymeleaf模板、Apache Poi办公文件导入导出。
 #### 功能介绍
 系统功能模块简单，
-
+#### 更新说明（2024年8月31日更新）
+1、登录界面新增管理员注册按钮，由于大多数人不知道管理员的默认账号，故新增这个功能。点击超级用户注册弹出模态框：请输入超级用户密令，密令输入正确才可以注册管理员账号，如下图：
+ ![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/08311.jpg)
+ ![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/08312.jpg)
+2、修复了部分BUG，包含管理员模块删除学生报错，提示500页面，分配评审员报错等BUG。
 
 
 
