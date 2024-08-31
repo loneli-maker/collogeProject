@@ -14,7 +14,6 @@
  ![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/08311.jpg)
  ![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/08312.jpg)
 2、修复了部分BUG，包含管理员模块删除学生报错，提示500页面，分配评审员报错等BUG。
-![08311](https://github.com/user-attachments/assets/c9e096b5-e3e9-430d-b781-1fac397a2cda)
 
 
 
