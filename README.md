@@ -20,7 +20,7 @@
 ![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/教师待指导项目界面.png)
 ![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/管理员项目详情截图.png)
 3、部分BUG修复，页面美观性更改，页面布局调整，裁剪了多余的换行及空白部分等。
-![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/导出功能截图.png)
+![项目信息导出功能截图](https://github.com/loneli-maker/collogeProject/blob/master/photo/导出功能截图.png)
 
 #### 更新说明（2024年8月31日更新）
 1、登录界面新增管理员注册按钮，由于大多数人不知道管理员的默认账号，故新增这个功能。点击超级用户注册弹出模态框：请输入超级用户密令，密令输入正确才可以注册管理员账号，如下图:
