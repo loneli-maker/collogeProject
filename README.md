@@ -18,7 +18,7 @@
 ![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/学生申报项目截图.png)
 2、教师查看学生申报项目情况时，可下载学生上传的word文档，考虑到文档名可能过长，文档名以项目计划书前10位+省略号+后缀名组成，如下图：
 ![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/教师待指导项目界面.png)
-![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/管理员项目详情截图.png)
+![管理员项目详情界面](https://github.com/loneli-maker/collogeProject/blob/master/photo/管理员项目详情截图.png)
 3、部分BUG修复，页面美观性更改，页面布局调整，裁剪了多余的换行及空白部分等。
 ![项目信息导出功能截图](https://github.com/loneli-maker/collogeProject/blob/master/photo/导出功能截图.png)
 
