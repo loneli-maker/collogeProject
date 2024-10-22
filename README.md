@@ -8,7 +8,20 @@
 # collogecourse
 江苏交通学院：大学生创新创业管理系统。这是一个SpingBoot框架写的管理系统，针对大学生创新创业项目的管理，完成了项目的申报、指导、评审等过程。 项目设计技术点：Java、SSM、SpringBoot、MybatisPlus、Jquery、Ajax、Thymeleaf模板、Apache Poi办公文件导入导出。
 #### 功能介绍
-系统功能模块简单，
+系统功能模块简单.
+#### 更新说明（2024年10月22日更新，本次更新为历史性改变，因为增加了数据表字段，优化了SQL语句，文档上传极为重要，故必须改变。后面会继续更新如下功能：
+1、老师的二次指导及总结功能。
+2、评审员参考学生终版项目文档和指导老师总结做出点评及打分功能。
+3、部分页面优化，markdown框架引用，待读取消息功能等。
+以上这些功能基本满足了该系统的业务功能。感谢支持！ :fire: ）
+1、学生申报界面新增项目文档上传功能（word文档上传），学生选择不小于50兆的word文档作为自己的电子项目计划书给指导老师看，如下图：
+![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/学生申报项目截图.png)
+2、教师查看学生申报项目情况时，可下载学生上传的word文档，考虑到文档名可能过长，文档名以项目计划书前10位+省略号+后缀名组成，如下图：
+![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/教师待指导项目界面.png)
+![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/管理员项目详情截图.png)
+3、部分BUG修复，页面美观性更改，页面布局调整，裁剪了多余的换行及空白部分等。
+![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/导出功能截图.png)
+
 #### 更新说明（2024年8月31日更新）
 1、登录界面新增管理员注册按钮，由于大多数人不知道管理员的默认账号，故新增这个功能。点击超级用户注册弹出模态框：请输入超级用户密令，密令输入正确才可以注册管理员账号，如下图:
  ![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/08311.jpg)
