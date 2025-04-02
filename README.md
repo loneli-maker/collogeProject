@@ -19,10 +19,10 @@
 ![学生自主申报](photo/0328-4.png)
 ![学生辅助申报](photo/0328-5.png)
 2、教师查看学生申报项目情况时，可下载学生上传的word文档，考虑到文档名可能过长，文档名以项目计划书前10位+省略号+后缀名组成，如下图：
-![输入图片说明](%E6%95%99%E5%B8%88%E5%BE%85%E6%8C%87%E5%AF%BC%E9%A1%B9%E7%9B%AE%E7%95%8C%E9%9D%A2.png)
-![管理员也可以下载项目文档](photo/%E7%AE%A1%E7%90%86%E5%91%98%E9%A1%B9%E7%9B%AE%E8%AF%A6%E6%83%85%E6%88%AA%E5%9B%BE.png)
+![image](https://github.com/loneli-maker/collogeProject/blob/master/photo/教师待指导项目界面.png)
+![管理员项目详情界面](https://github.com/loneli-maker/collogeProject/blob/master/photo/管理员项目详情截图.png)
 3、部分BUG修复，页面美观性更改，页面布局调整，裁剪了多余的换行及空白部分等。
-![输入图片说明](%E5%AF%BC%E5%87%BA%E5%8A%9F%E8%83%BD%E6%88%AA%E5%9B%BE.png)
+![项目信息导出功能截图](https://github.com/loneli-maker/collogeProject/blob/master/photo/导出功能截图.png)
 
 #### 更新说明（2024年8月31日更新）
 1、登录界面新增管理员注册按钮，由于大多数人不知道管理员的默认账号，故新增这个功能。点击超级用户注册弹出模态框：请输入超级用户密令，密令输入正确才可以注册管理员账号，如下图：
@@ -31,19 +31,21 @@
 2、修复了部分BUG，包含管理员模块删除学生报错，提示500页面，分配评审员报错等BUG。
 
 #### 安装教程
-##### 本地手工部署
-idea安装与配置
-1、下载idea工具，工具里面可以直接下载JDK，或者导入JDK1.8。 
-![输入图片说明](photo/1.jpgimage.png)
-2、下载maven(下载3.6版本是最好的，别下最新的，最新的有些依赖可能找不到，如果pom.xml文件里仍有依赖报红，多加载几次，结合csdn、博客园解决，一般不会卡太久），并配置阿里云镜像，配置仓库路径，配置环境变量。 
-![输入图片说明](photo/2.jpgimage.png)
-![输入图片说明](photo/3.jpgimage.png)
-mysql数据库安装并导入数据
-1、安装mysql5.7,网上自行百度 2、创建数据库，名称study,导入数据库文件sql.txt，把后缀改为sql，或者直接复制sql内容去执行。 ![输入图片说明](photo/4.jpgimage.png)
+### 本地手工部署
+#### idea安装与配置
+   1、下载idea工具，工具里面可以直接下载JDK，或者导入JDK1.8。
+   ![image](https://github.com/loneli-maker/collogeProject/assets/79433596/fac0886d-f66f-4632-99c2-c5e066e2e52c)
 
-3、检查application.properties，里面的信息自己去改，包括端口号、数据库名称、mysql用户名和密码，这个很简单的就不多说。 
-![输入图片说明](photo/5.jpgimage.png)
-![输入图片说明](photo/6.jpgimage.png)
+
+#### mysql数据库安装并导入数据
+1、安装mysql5.7,网上自行百度
+2、创建数据库，名称study,导入数据库文件sql.txt，把后缀改为sql，或者直接复制sql内容去执行。
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/9559d5c7-d5d5-4057-b31c-69fbf0fcf4d8)
+
+3、检查application.properties，里面的信息自己去改，包括端口号、数据库名称、mysql用户名和密码，这个很简单的就不多说。
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/6e84bb5c-eacb-438f-b5cc-a0f133e0f60a)
+
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/6b7ab8a9-9ede-45cc-9e0a-960abc9d94b9)
 #### 使用说明
 1、登陆界面，如果CSS有点变形，可能是bootstrap样式或者前端模板有点问题，第二次登陆就是正常的，感兴趣的也可以自己去改前端页面，反正不用动后端接口就行 
 ![输入图片说明](photo/0328-1.png)
