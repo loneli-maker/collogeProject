@@ -50,19 +50,19 @@
 1、登陆界面，如果CSS有点变形，可能是bootstrap样式或者前端模板有点问题，第二次登陆就是正常的，感兴趣的也可以自己去改前端页面，反正不用动后端接口就行 
 ![输入图片说明](photo/0328-1.png)
 
-2、配置文件里的路径需要改，绝对路劲都需要改成你自己的，photo所属的绝对路劲，复制你的路劲/photo，photo不要动，要不然修改头像、图片之类的会空指针。根据打印日志看问题，修改路径。 image
-![输入图片说明](photo/8.jpgimage.png)
-![输入图片说明](photo/9.jpgimage.png)
+2、配置文件里的路径需要改，绝对路劲都需要改成你自己的，photo所属的绝对路劲，复制你的路劲/photo，photo不要动，要不然修改头像、图片之类的会空指针。根据打印日志看问题，修改路径。
 
 ### 各模块功能
-1、学生登录首页和申报项目 
-![输入图片说明](photo/10.jpgimage.png)
-2、教师开设项目课题、指导学生申报的项目。 
-![输入图片说明](photo/11.jpgimage.png)
+1、学生登录首页和申报项目
+![7b5af7197172086beb56f1d158504dc](https://github.com/loneli-maker/collogeProject/assets/79433596/b536b6ef-a052-4c9c-8882-e1465c34f34d)
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/20cc1b8f-e31d-49bf-b696-4d145c63ea26)
+2、教师开设项目课题、指导学生申报的项目。
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/361b23c7-887c-431c-955e-7aa9bd9542b7)
 3、评审员对项目进行打分 image
 ![输入图片说明](photo/0328-2.png)
 4、管理员可以管理学生、老师、评审员的基本信息；可以分配学生申报的项目给哪些评审员评审，也可以根据评审员所打的分 判断是否通过该创新创业项目。其他小功能可自行摸索。
-![输入图片说明](photo/13.jpgimage.png)
-![输入图片说明](photo/15.jpgimage.png)
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/d86d10c3-ae85-4a94-a9ee-3a638641414e)
+![image](https://github.com/loneli-maker/collogeProject/assets/79433596/120972bb-35a7-4d6b-841e-dcbba0a6dc5a)
+![f7340e647a81f5a3dfd2c76a35fec99](https://github.com/loneli-maker/collogeProject/assets/79433596/cf3e7d0c-889a-449e-830a-c66d6e9c7f28)
 ### 写在最后
 对计算机软件行业感兴趣的，如web开发（Java web、php web）、系统运维（工厂linux服务器运维、docker+K8S运维）、系统实施（服务器搭建部署、需求收集、软件交付物制作）等感兴趣的可私信我。共同学习，觉得有用的可以点个赞，上传不易，感谢捐赠。）
